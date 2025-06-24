@@ -7,13 +7,13 @@
 <br>
 
 <p align="center">
-  <a href="./"><img src="https://img.shields.io/github/stars/zamelane/lophius" alt="Contributors" /></a>
+  <a href="./"><img src="https://img.shields.io/github/stars/zamelane/lophius-adonis" alt="Contributors" /></a>
 </p>
 
 <p align="center">
   <a href="http://www.gnu.org/licenses/agpl-3.0" rel="nofollow"><img src="https://img.shields.io/badge/license-AGPL-blue.svg" alt="License"></a>
-  <a href="./"><img src="https://img.shields.io/github/languages/code-size/zamelane/lophius" alt="Code size" /></a>
-  <a href="./"><img src="https://img.shields.io/github/contributors/zamelane/lophius" alt="Contributors" /></a>
+  <a href="./"><img src="https://img.shields.io/github/languages/code-size/zamelane/lophius-adonis" alt="Code size" /></a>
+  <a href="./"><img src="https://img.shields.io/github/contributors/zamelane/lophius-adonis" alt="Contributors" /></a>
 </p>
 
 <p align="center">
@@ -36,7 +36,7 @@ You can view the demo version at [lophius.ru](https://lophius.ru)
 1. Clone the repository
 
 ```bash
-  git clone https://github.com/zamelane/lophius
+  git clone https://github.com/zamelane/lophius-adonis
 ```
 
 2. Navigate to the project server directory
