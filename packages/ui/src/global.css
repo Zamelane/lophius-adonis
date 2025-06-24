@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@import "./styles/button.css";
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --color-background: hsl(0 0% 100%);
+  --color-white: hsl(0 0% 100%);
+  --color-primary: hsl(220 90% 70%);
+}
+
+@layer dark {
+  [data-theme=dark] {
+    --color-background: hsl(0 0% 0%);
+    --color-white: hsl(0 0% 100%);
+    --color-primary: hsl(220 90% 70%);
+  }
+}
+
+@layer utilities {
+  .tap-transparent {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+html {
+  background-color: var(--color-background);
+}
