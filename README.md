@@ -42,7 +42,7 @@ You can view the demo version at [lophius.ru](https://lophius.ru)
 2. Navigate to the project server directory
 
 ```bash
-  cd lophius/apps/web
+  cd lophius/apps/backend
 ```
 
 3. Install dependencies
@@ -53,7 +53,13 @@ You can view the demo version at [lophius.ru](https://lophius.ru)
 
 4. Fill in the configuration file `.env` (see `.env.example` for an example)
 
-5. Build and start the server (production)
+5. Run migrations
+
+```bash
+  bun ace migration:run
+```
+
+6. Build and start the server (production)
 
 ```bash
   bun run build

@@ -10,7 +10,9 @@
 import router from '@adonisjs/core/services/router'
 import AutoSwagger from 'adonis-autoswagger'
 import swagger from '#config/swagger'
+import { middleware } from './kernel.js'
 
+const SessionController = () => import('#controllers/session_controller')
 const UsersController = () => import('#controllers/users_controller')
 
 router.get('/', async () => {
@@ -22,10 +24,17 @@ router.get('/', async () => {
 // Api группа
 router
   .group(() => {
+    // [Вход и регистрация]
+    router.put('session', [SessionController, 'registration'])
+    router.post('session', [SessionController, 'store'])
+    router
+      .delete('session', [SessionController, 'destroy'])
+      .use(middleware.auth({ guards: ['api'] }))
+
     // [Пользователи]
     router
       .group(() => {
-        router.post('reg', [UsersController, 'store'])
+        router.get('/me', [UsersController, 'me']).use(middleware.auth({ guards: ['api'] }))
       })
       .prefix('/users')
   })
