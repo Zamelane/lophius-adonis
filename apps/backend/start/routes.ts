@@ -9,8 +9,22 @@
 
 import router from '@adonisjs/core/services/router'
 
+const UsersController = () => import('#controllers/users_controller')
+
 router.get('/', async () => {
   return {
     hello: 'world',
   }
 })
+
+// Api группа
+router
+  .group(() => {
+    // [Пользователи]
+    router
+      .group(() => {
+        router.post('reg', [UsersController, 'store'])
+      })
+      .prefix('/users')
+  })
+  .prefix('/api')
