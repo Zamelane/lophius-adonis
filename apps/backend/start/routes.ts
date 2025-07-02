@@ -34,7 +34,11 @@ router
     // [Пользователи]
     router
       .group(() => {
-        router.get('/me', [UsersController, 'me']).use(middleware.auth({ guards: ['api'] }))
+        router.group(() => {
+          router.get('', [UsersController, 'me'])
+          router.post('', [UsersController, 'updateMe'])
+        }).use(middleware.auth({ guards: ['api'] }))
+          .prefix('/me')
       })
       .prefix('/users')
   })
